@@ -1,0 +1,98 @@
+.main {
+  padding-top: 80px; /* offset navbar */
+  min-height: 100vh;
+  background: #111420;
+}
+
+/* Info Bar */
+.infoBar {
+  background: #1a1c26;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 8px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 16px 0;
+}
+
+.infoInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.infoLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.productName {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.brandName {
+  font-size: 0.85rem;
+  color: #C9A84C;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.infoRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badgeDivider {
+  color: rgba(255,255,255,0.2);
+  font-size: 0.8rem;
+}
+
+/* Layout Grid */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  padding-top: 32px;
+  padding-bottom: 64px;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebarCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+  height: max-content;
+}
+
+@media (max-width: 992px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebarCol {
+    position: relative;
+    top: 0;
+  }
+}

@@ -1,0 +1,141 @@
+.card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(245,197,24,0.3), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245,197,24,0.3);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,197,24,0.15),
+              0 0 30px rgba(245,197,24,0.1);
+}
+
+.card:hover::before {
+  opacity: 1;
+  background: linear-gradient(90deg, transparent, rgba(245,197,24,0.8), transparent);
+}
+
+/* Popular variant */
+.popular {
+  border-color: rgba(245,197,24,0.35);
+  background: linear-gradient(145deg, #111827, #1a1f2e);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,197,24,0.2),
+              0 0 40px rgba(245,197,24,0.08);
+}
+
+.popular::before {
+  opacity: 1 !important;
+  background: linear-gradient(90deg, transparent, #F5C518, transparent) !important;
+}
+
+/* Popular badge */
+.popularBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #F5C518, #F59E0B);
+  color: #0A0C12;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* Rank row */
+.rankRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.rankArrow {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* Package name */
+.name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+/* Price */
+.priceWrap {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #F5C518, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.estimasi {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.85;
+}
+
+/* CTA button */
+.cta {
+  width: 100%;
+  margin-top: auto;
+  font-size: 0.9rem !important;
+  padding: 12px 20px !important;
+}

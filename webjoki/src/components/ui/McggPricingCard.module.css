@@ -1,0 +1,214 @@
+.card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  transition: var(--transition);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Featured card (Legend) */
+.featured {
+  border-color: rgba(245, 197, 24, 0.35);
+  background: rgba(245, 197, 24, 0.03);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid currentColor;
+  z-index: 2;
+}
+
+/* Icon */
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  margin-bottom: 4px;
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .iconWrapper {
+  transform: scale(1.1) translateY(-2px);
+}
+
+.rankIcon {
+  object-fit: contain;
+}
+
+/* Rank name */
+.rankName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* Price */
+.priceArea {
+  margin: 4px 0;
+}
+
+.priceText {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.priceLabel {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 8px 0;
+}
+
+/* Description */
+.desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ━━━━ Borongan Card ━━━━ */
+.boronganCard {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid rgba(245, 197, 24, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.boronganCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 197, 24, 0.4);
+  box-shadow: 0 8px 30px rgba(245, 197, 24, 0.08);
+}
+
+.boronganAccent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--color-accent), #3B82F6);
+}
+
+.boronganBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--color-accent), #F59E0B);
+  color: #000;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 5px 14px;
+  border-bottom-left-radius: 12px;
+}
+
+.boronganIcon {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+  padding-left: 8px;
+}
+
+.boronganInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.boronganTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+}
+
+.boronganRoute {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.boronganPrice {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.boronganDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.boronganBtn {
+  flex-shrink: 0;
+}
+
+.csBtn {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+/* ━━━━ Responsive ━━━━ */
+@media (max-width: 768px) {
+  .boronganCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+  }
+
+  .boronganIcon {
+    padding-left: 0;
+  }
+
+  .boronganBtn {
+    width: 100%;
+  }
+
+  .csBtn {
+    width: 100%;
+  }
+}

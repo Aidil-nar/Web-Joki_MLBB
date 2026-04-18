@@ -1,0 +1,167 @@
+.card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.selected {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Base header styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 140px;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+}
+
+.rankIcon {
+  object-fit: contain;
+}
+
+.tierLabel {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.rankRange {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 1px solid currentColor;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Price area */
+.priceArea {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.priceRange {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.priceLabel {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+/* Characteristics */
+.characteristics {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.charItem {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+/* Rank pill badges */
+.ranksRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.rankPill {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+}
+
+/* CTA */
+.ctaBtn {
+  width: 100%;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+}
+
+/* Modifiers for Mid Tier */
+.midTier {
+  border: 1px solid rgba(245, 197, 24, 0.4);
+  transform: scale(1.04);
+  z-index: 10;
+}
+
+.midTier:hover {
+  transform: scale(1.06) translateY(-4px);
+}
+
+@media (max-width: 1024px) {
+  .midTier {
+    transform: none;
+  }
+  .midTier:hover {
+    transform: translateY(-4px);
+  }
+}

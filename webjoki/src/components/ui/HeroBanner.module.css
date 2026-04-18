@@ -1,0 +1,105 @@
+.banner {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background image */
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Subtle overlay for text readability */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 18, 0.25) 0%,
+    rgba(10, 12, 18, 0.1) 40%,
+    rgba(10, 12, 18, 0.35) 70%,
+    rgba(10, 12, 18, 0.8) 100%
+  );
+}
+
+/* Dark vignette edges */
+.bgVignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 85% 85% at 50% 50%, transparent 40%, rgba(10,12,18,0.55) 100%);
+  pointer-events: none;
+}
+
+/* Center Parchment scroll */
+.parchment {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(145deg, #e8e0d4, #d4cabb, #e0d8cc);
+  padding: 20px 48px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,0,0,0.08);
+  clip-path: polygon(2% 0, 98% 3%, 100% 97%, 0% 100%);
+  animation: parchFloat 4s ease-in-out infinite;
+}
+
+@keyframes parchFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.parchTop {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #2a1a0a;
+  margin: 0;
+  letter-spacing: 0.08em;
+}
+
+.parchMain {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #C9A84C, #8B6914, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin: 4px 0 10px;
+  letter-spacing: 0.04em;
+}
+
+.parchLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a1c26;
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .banner { height: 220px; }
+  .parchment { padding: 14px 28px; }
+  .parchMain { font-size: 1.6rem; }
+  .parchTop { font-size: 0.8rem; }
+}

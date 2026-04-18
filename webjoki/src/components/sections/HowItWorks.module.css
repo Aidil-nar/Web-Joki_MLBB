@@ -1,0 +1,25 @@
+.section {
+  background: var(--color-bg);
+}
+
+.bgAccent {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 40% 50% at 50% 0%, rgba(245,197,24,0.04), transparent);
+  pointer-events: none;
+}
+
+.grid {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

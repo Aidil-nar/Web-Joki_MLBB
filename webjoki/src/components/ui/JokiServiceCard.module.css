@@ -1,0 +1,96 @@
+.card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3/4;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card:hover .glowRing {
+  opacity: 1;
+}
+
+.card:hover .heroImage {
+  transform: scale(1.08);
+}
+
+/* Artwork container */
+.artwork {
+  position: absolute;
+  inset: 0;
+}
+
+/* Hero character image */
+.heroImage {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+/* Bottom gradient overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,12,18,0.95) 0%,
+    rgba(10,12,18,0.6) 30%,
+    transparent 60%
+  );
+  z-index: 3;
+}
+
+/* Label at bottom */
+.label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mlbbBadge {
+  display: inline-flex;
+  align-self: flex-start;
+  background: rgba(59,130,246,0.2);
+  border: 1px solid rgba(59,130,246,0.4);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #60a5fa;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #F5C518;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+/* Hover glow ring */
+.glowRing {
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+}

@@ -1,0 +1,94 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.card {
+  flex: 1;
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px 32px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 197, 24, 0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,197,24,0.2);
+}
+
+/* Big watermark number */
+.stepNumber {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 700;
+  color: rgba(245, 197, 24, 0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: var(--transition);
+}
+
+.card:hover .stepNumber {
+  color: rgba(245, 197, 24, 0.1);
+}
+
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(245,197,24,0.15), rgba(59,130,246,0.1));
+  border: 1px solid rgba(245,197,24,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.card:hover .iconWrap {
+  background: linear-gradient(135deg, rgba(245,197,24,0.25), rgba(59,130,246,0.15));
+  box-shadow: 0 0 20px rgba(245,197,24,0.2);
+}
+
+.icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Connector arrow between cards */
+.connector {
+  flex-shrink: 0;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .connector { display: none; }
+  .wrapper { width: 100%; }
+}

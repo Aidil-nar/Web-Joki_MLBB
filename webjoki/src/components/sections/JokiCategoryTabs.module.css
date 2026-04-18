@@ -1,0 +1,47 @@
+.scrollContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.tab {
+  background: #1E2130;
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #9ca3af;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background: #2A2D3A;
+  color: #e5e7eb;
+}
+
+.active {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
+}

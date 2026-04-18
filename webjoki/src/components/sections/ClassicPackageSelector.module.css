@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Tier Section */
+.tierSection {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.numberIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--color-accent);
+  color: #000;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Grid Layouts */
+.tierGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.offerSection {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.offerHeader {
+  margin-bottom: 20px;
+}
+
+.offerLabel {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.offerTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 4px 0;
+  letter-spacing: 0.05em;
+}
+
+.offerSubtitle {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.offerGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .tierGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .offerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tierGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,141 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Help Panel */
+.helpPanel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #2a2d3a;
+  border: 1px solid #3a3d4a;
+  border-radius: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.helpPanel:hover {
+  border-color: #C9A84C;
+}
+
+.helpIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.helpTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.helpDesc {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+/* Summary Box */
+.summaryBox {
+  background: #2a2d3a;
+  border: 1.5px dashed #3a3d4a;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyState {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.selectedItem {
+  width: 100%;
+  text-align: center;
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.discountBadge {
+  display: inline-block;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #f87171;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.pkgName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.qtyInfo {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.pkgPrice {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: #F5C518;
+  letter-spacing: 0.02em;
+}
+
+.pkgOriginalPrice {
+  font-size: 0.82rem;
+  color: #ef4444;
+  text-decoration: line-through;
+  margin-top: 2px;
+}
+
+/* CTA Button */
+.submitBtn {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #C9A84C, #8B6914);
+  color: #0a0c12;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+}
+
+.submitBtn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: scale(1.01);
+  box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
