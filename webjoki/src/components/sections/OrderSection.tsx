@@ -184,29 +184,64 @@ export default function OrderSection({ preSelectedPackageId }: OrderSectionProps
               </div>
 
               {/* Payment Method */}
-              <div className="form-group">
-                <label className="form-label">Metode Pembayaran</label>
-                <div className={styles.paymentGrid}>
-                  {PAYMENT_METHODS.map((pm) => (
-                    <label
-                      key={pm.value}
-                      className={`${styles.paymentOption} ${
-                        formState.data.paymentMethod === pm.value ? styles.paymentActive : ''
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="payment"
-                        value={pm.value}
-                        checked={formState.data.paymentMethod === pm.value}
-                        onChange={() => updateField('paymentMethod', pm.value as PaymentMethod)}
-                        className={styles.radioHidden}
-                        disabled={formState.isLoading}
-                      />
-                      <span className={styles.paymentIcon}>{pm.icon}</span>
-                      <span className={styles.paymentLabel}>{pm.label}</span>
-                    </label>
-                  ))}
+              <div className={styles.paymentSectionWrapper}>
+                <div className={styles.paymentStepHeader}>
+                  <div className={styles.paymentStepNumber}>4</div>
+                  <div className={styles.paymentStepTitle}>Pilih Pembayaran</div>
+                </div>
+
+                <div className={styles.paymentAccordion}>
+                  <div className={styles.paymentGroupHeader}>
+                    <div className={styles.paymentGroupInfo}>
+                      <div className={styles.paymentGroupTitle}>DANA OVO GOPAY QRIS BCA MANDIRI</div>
+                      <div className={styles.paymentGroupLogos}>
+                        {['DANA', 'OVO', 'GOPAY', 'QRIS', 'BCA', 'MANDIRI'].map((m) => (
+                          <span key={m} className={styles.paymentGroupLogoBadge}>{m}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className={styles.paymentGroupPrice}>
+                      {selectedPkg ? selectedPkg.priceFormatted : 'Rp -'}
+                    </div>
+                    <div className={styles.paymentRibbon}>BEST PRICE</div>
+                  </div>
+
+                  <div className={styles.paymentExpandedArea}>
+                    <div className={styles.paymentExpandedAreaTitle}>
+                      <span>E-Wallet & Virtual Account</span>
+                      <span>^</span>
+                    </div>
+                    <div className={styles.paymentGrid}>
+                      {PAYMENT_METHODS.map((pm) => (
+                        <label
+                          key={pm.value}
+                          className={`${styles.paymentCard} ${
+                            formState.data.paymentMethod === pm.value ? styles.paymentCardActive : ''
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            name="payment"
+                            value={pm.value}
+                            checked={formState.data.paymentMethod === pm.value}
+                            onChange={() => updateField('paymentMethod', pm.value as PaymentMethod)}
+                            className={styles.radioHidden}
+                            disabled={formState.isLoading}
+                          />
+                          <div className={styles.paymentCardTop}>
+                            <span className={styles.paymentCardIcon}>{pm.icon}</span>
+                            <span className={styles.paymentCardName}>{pm.label}</span>
+                          </div>
+                          <div className={styles.paymentCardPriceInside}>
+                            {selectedPkg ? selectedPkg.priceFormatted : 'Rp -'}
+                          </div>
+                          <div className={styles.paymentCardBottom}>
+                            Proses Otomatis
+                          </div>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

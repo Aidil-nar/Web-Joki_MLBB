@@ -344,8 +344,10 @@ export const SERVER_REGIONS = [
 // 💳 Payment Methods
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export const PAYMENT_METHODS = [
-  { value: 'dana', label: 'DANA', icon: '💳' },
-  { value: 'gopay', label: 'GoPay', icon: '💚' },
-  { value: 'qris', label: 'QRIS', icon: '📱' },
-  { value: 'transfer', label: 'Transfer Bank', icon: '🏦' },
+  { value: 'qris', label: 'QRIS', icon: '📱', group: 'E-Wallet' },
+  { value: 'dana', label: 'DANA', icon: '🔵', group: 'E-Wallet' },
+  { value: 'ovo', label: 'OVO', icon: '🟣', group: 'E-Wallet' },
+  { value: 'gopay', label: 'GoPay', icon: '🟢', group: 'E-Wallet' },
+  { value: 'bca', label: 'BCA', icon: '🏦', group: 'Virtual Account' },
+  { value: 'mandiri', label: 'Mandiri', icon: '🏦', group: 'Virtual Account' },
 ];

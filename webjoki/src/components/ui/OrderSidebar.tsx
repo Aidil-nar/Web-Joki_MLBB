@@ -7,9 +7,10 @@ import styles from './OrderSidebar.module.css';
 interface Props {
   selectedPackage: JokiServicePackage | null;
   quantity: number;
+  onOrderClick: () => void;
 }
 
-export default function OrderSidebar({ selectedPackage, quantity }: Props) {
+export default function OrderSidebar({ selectedPackage, quantity, onOrderClick }: Props) {
   const totalPrice = selectedPackage ? selectedPackage.price * quantity : 0;
   const totalOriginal = selectedPackage ? selectedPackage.originalPrice * quantity : 0;
 
@@ -56,8 +57,7 @@ export default function OrderSidebar({ selectedPackage, quantity }: Props) {
       {/* CTA Button */}
       <button 
         className={styles.submitBtn} 
-        disabled={!selectedPackage}
-        onClick={() => alert('Proceeding to payment...')}
+        onClick={onOrderClick}
       >
         <span>🛒</span> Pesan Sekarang!
       </button>
